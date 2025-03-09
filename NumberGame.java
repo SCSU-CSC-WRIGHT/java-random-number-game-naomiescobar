@@ -1,9 +1,9 @@
-import java.until.Random;
-import java.until.Scanner;
+import java.util.Random;
+import java.util.Scanner;
 
 public class NumberGame{
     public static void main(String[] args) {
-        java.util.Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the game 'Guess the number'! Enter your name: ");
         String name = scanner.nextLine();
         System.out.println("Hello, " + name);
@@ -20,16 +20,16 @@ public class NumberGame{
 
         Random random = new Random();
         int randomNumber = random.nextInt(100) + 1; 
-        int userGess = 0;
+        int attempts = 0;
         int maxattempts = 10;
 
         System.out.println("Guess a number between 1 and " + range +": ");
-        while (attempts < maxattempts){
+        while (attempts < maxattempts) {
             int guess = scanner.nextInt();
             attempts++;
             if (guess < randomNumber) {
                 System.out.println("Too low! Try again.");                                
-            } else if (userGess > randomNumber){
+            } else if (guess > randomNumber){
                 System.out.println("Too high! Try again.");
             } else {
                 System.out.println("Congrats! You guessed the number in: " + attempts + "attempts.");
